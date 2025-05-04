@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/api/posts/all");
+        const res = await axios.get("http://localhost:8085/api/posts/all");
         setPosts(res.data.reverse()); // show newest first
       } catch (error) {
         console.error("Error fetching posts:", error);
@@ -22,7 +22,7 @@ export default function Home() {
 
     const fetchAllRecipes = async () => {
       try {
-        const res = await axios.get('http://localhost:8080/api/recipes/all'); // <-- Fetch all recipes
+        const res = await axios.get('http://localhost:8085/api/recipes/all'); // <-- Fetch all recipes
         setAllRecipes(res.data.reverse()); // newest first
       } catch (error) {
         console.error('Error fetching all recipes:', error);
@@ -40,7 +40,7 @@ export default function Home() {
 
   const handleLikePost = async (postId) => {
     try {
-      const res = await axios.put(`http://localhost:8080/api/posts/like/${postId}`, null, {
+      const res = await axios.put(`http://localhost:8085/api/posts/like/${postId}`, null, {
         params: { userEmail: email },
       });
       const updatedPost = res.data;
@@ -164,7 +164,7 @@ export default function Home() {
               <div key={recipe._id} className="bg-white rounded-lg shadow-lg p-6 transition transform hover:scale-105">
                 {recipe.imageUrl && (
                   <img
-                    src={`http://localhost:8080${recipe.imageUrl}`}
+                    src={`http://localhost:8085${recipe.imageUrl}`}
                     alt={recipe.title}
                     className="rounded-md mb-4 h-48 w-full object-cover"
                   />

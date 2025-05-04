@@ -19,15 +19,15 @@ export default function Userprofile() {
 
   useEffect(() => {
     if (email) {
-      axios.get(`http://localhost:8080/api/users/${email}`)
+      axios.get(`http://localhost:8085/api/users/${email}`)
         .then(res => {
           if (res.data.profileImage) {
-            setProfileImage(`http://localhost:8080/${res.data.profileImage}`);
+            setProfileImage(`http://localhost:8085/${res.data.profileImage}`);
           }
         })
         .catch(err => console.error("Error fetching user:", err));
 
-      axios.get(`http://localhost:8080/api/posts/user?email=${email}`)
+      axios.get(`http://localhost:8085/api/posts/user?email=${email}`)
         .then(res => {
           setPosts(res.data);
         })
@@ -55,11 +55,11 @@ export default function Userprofile() {
       formData.append("image", file);
 
       try {
-        const res = await axios.put(`http://localhost:8080/api/users/upload/${email}`, formData, {
+        const res = await axios.put(`http://localhost:8085/api/users/upload/${email}`, formData, {
           headers: { "Content-Type": "multipart/form-data" }
         });
         if (res.data.profileImage) {
-          setProfileImage(`http://localhost:8080/api/users/images/${res.data.profileImage}`);
+          setProfileImage(`http://localhost:8085/api/users/images/${res.data.profileImage}`);
         }
       } catch (err) {
         console.error("Error uploading profile image:", err);
@@ -74,11 +74,11 @@ export default function Userprofile() {
       formData.append("image", file);
 
       try {
-        const res = await axios.put(`http://localhost:8080/api/users/uploadCover/${email}`, formData, {
+        const res = await axios.put(`http://localhost:8085/api/users/uploadCover/${email}`, formData, {
           headers: { "Content-Type": "multipart/form-data" }
         });
         if (res.data.coverImage) {
-          setCoverImage(`http://localhost:8080/api/users/images/${res.data.coverImage}`);
+          setCoverImage(`http://localhost:8085/api/users/images/${res.data.coverImage}`);
         }
       } catch (err) {
         console.error("Error uploading cover image:", err);

@@ -20,7 +20,7 @@ public class PostController {
     @Autowired
     private PostRepository postRepository;
 
-    private final String uploadDir = "G:/PAFPROJECT/Backend/uploads/";
+    private final String uploadDir = "D:/Edu_Ceylon/Backend/uploads/";
 
     @PostMapping("/create")
     public ResponseEntity<?> createPost(
@@ -39,7 +39,7 @@ public class PostController {
                     String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
                     File destination = new File(uploadDir + fileName);
                     file.transferTo(destination);
-                    imageUrls.add("http://localhost:8080/uploads/" + fileName);
+                    imageUrls.add("http://localhost:8085/uploads/" + fileName);
                     System.out.println("Saved file to: " + destination.getAbsolutePath());
                 } else {
                     return ResponseEntity.badRequest().body("One or more images are empty");
@@ -134,7 +134,7 @@ public ResponseEntity<?> updatePost(@PathVariable String id,
                 File destination = new File(uploadDir + fileName);
                 try {
                     file.transferTo(destination);
-                    imageUrls.add("http://localhost:8080/uploads/" + fileName);
+                    imageUrls.add("http://localhost:8085/uploads/" + fileName);
                 } catch (IOException e) {
                     return ResponseEntity.status(500).body("Error saving images: " + e.getMessage());
                 }

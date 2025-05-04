@@ -13,7 +13,7 @@ export default function Post_views() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/api/posts/user?email=${email}`).then(res => {
+    axios.get(`http://localhost:8085/api/posts/user?email=${email}`).then(res => {
       setPosts(res.data);
     });
   }, [email]);
@@ -28,7 +28,7 @@ export default function Post_views() {
     if (!confirm) return;
   
     try {
-      await axios.delete(`http://localhost:8080/api/posts/delete/${postId}`);
+      await axios.delete(`http://localhost:8085/api/posts/delete/${postId}`);
       setPosts(posts.filter(post => post.id !== postId));
     } catch (err) {
       alert("Failed to delete the post.");

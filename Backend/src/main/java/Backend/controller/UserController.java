@@ -24,7 +24,7 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    private static final String UPLOAD_DIR = "G:/PAFPROJECT/Backend/uploads/";
+    private static final String UPLOAD_DIR = "D:/Edu_Ceylon/Backend/uploads/";
 
     @PostMapping("/register")
     public String registerUser(@RequestBody User user) {

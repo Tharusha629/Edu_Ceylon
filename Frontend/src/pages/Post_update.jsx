@@ -23,7 +23,7 @@ export default function Post_update() {
       formData.append('images', file);
     });
 
-    axios.put(`http://localhost:8080/api/posts/update/${post.id}`, formData, {
+    axios.put(`http://localhost:8085/api/posts/update/${post.id}`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       }

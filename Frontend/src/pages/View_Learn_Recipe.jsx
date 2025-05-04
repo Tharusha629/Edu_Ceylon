@@ -12,7 +12,7 @@ export default function View_Learn_Recipe() {
 
   const fetchRecipes = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/learn');
+      const response = await axios.get('http://localhost:8085/learn');
       setRecipes(response.data);
     } catch (err) {
       console.error('Error fetching recipes:', err);
@@ -23,7 +23,7 @@ export default function View_Learn_Recipe() {
     if (!window.confirm('Are you sure you want to delete this recipe?')) return;
 
     try {
-      await axios.delete(`http://localhost:8080/learn/${id}`);
+      await axios.delete(`http://localhost:8085/learn/${id}`);
       setRecipes(recipes.filter(recipe => recipe.id !== id));
     } catch (err) {
       console.error('Error deleting recipe:', err);
@@ -105,7 +105,7 @@ export default function View_Learn_Recipe() {
     <h5 className="text-lg font-medium text-gray-800">Recipe Video</h5>
     <video controls className="w-full h-[350px] rounded-lg shadow-md">
       <source
-        src={`http://localhost:8080${recipe.videoPath}`}
+        src={`http://localhost:8085${recipe.videoPath}`}
         type={getMimeTypeFromExtension(recipe.videoPath)}
       />
       Your browser does not support the video tag.

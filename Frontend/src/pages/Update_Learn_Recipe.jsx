@@ -15,7 +15,7 @@ export default function Update_Learn_Recipe() {
   const [newVideo, setNewVideo] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/learn`)
+    axios.get(`http://localhost:8085/learn`)
       .then(res => {
         const target = res.data.find(r => r.id === id);
         if (target) setRecipe(target);
@@ -50,7 +50,7 @@ export default function Update_Learn_Recipe() {
     }
 
     try {
-      await axios.put(`http://localhost:8080/learn/${id}`, formData, {
+      await axios.put(`http://localhost:8085/learn/${id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -107,7 +107,7 @@ export default function Update_Learn_Recipe() {
         <div className="mb-6">
           <h4 className="font-semibold text-gray-700 mb-2">Current Video</h4>
           <video controls className="w-full h-64 rounded-lg shadow">
-            <source src={`http://localhost:8080${recipe.videoPath}`} type="video/mp4" />
+            <source src={`http://localhost:8085${recipe.videoPath}`} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>

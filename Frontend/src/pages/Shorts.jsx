@@ -10,7 +10,7 @@ export default function Shorts() {
 
   const fetchRecipes = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/learn');
+      const response = await axios.get('http://localhost:8085/learn');
       setRecipes(response.data);
     } catch (err) {
       console.error('Error fetching recipes:', err);
@@ -49,7 +49,7 @@ export default function Shorts() {
                   className="w-full h-[300px] object-cover"
                 >
                   <source
-                    src={`http://localhost:8080${recipe.videoPath}`}
+                    src={`http://localhost:8085${recipe.videoPath}`}
                     type={getMimeTypeFromExtension(recipe.videoPath)}
                   />
                   Your browser does not support the video tag.

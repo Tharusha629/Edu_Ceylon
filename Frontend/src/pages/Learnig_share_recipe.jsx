@@ -13,7 +13,7 @@ export default function Learnig_share_recipe() {
 
   const fetchRecipes = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/recipes/user', {
+      const response = await axios.get('http://localhost:8085/api/recipes/user', {
         params: { email: userEmail }
       });
       setRecipes(response.data);
@@ -25,7 +25,7 @@ export default function Learnig_share_recipe() {
   const handleDelete = async (id) => {
     console.log("Deleting recipe with ID:", id); // Add this line
     try {
-      await axios.delete(`http://localhost:8080/api/recipes/${id}`);
+      await axios.delete(`http://localhost:8085/api/recipes/${id}`);
       fetchRecipes(); // Refresh list
     } catch (error) {
       console.error('Error deleting recipe:', error);
@@ -50,7 +50,7 @@ export default function Learnig_share_recipe() {
               <div key={recipe._id} className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition">
                 {recipe.imageUrl && (
                   <img
-                    src={`http://localhost:8080${recipe.imageUrl}`}
+                    src={`http://localhost:8085${recipe.imageUrl}`}
                     alt={recipe.title}
                     className="w-full h-48 object-cover rounded-md mb-4"
                   />

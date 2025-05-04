@@ -8,10 +8,10 @@ export default function Navigation() {
   useEffect(() => {
     const email = localStorage.getItem("userEmail");
     if (email) {
-      axios.get(`http://localhost:8080/api/users/${email}`)
+      axios.get(`http://localhost:8085/api/users/${email}`)
         .then(res => {
           if (res.data.profileImage) {
-            setProfileImage(`http://localhost:8080/${res.data.profileImage}`);
+            setProfileImage(`http://localhost:8085/${res.data.profileImage}`);
           }
         })
         .catch(err => {
