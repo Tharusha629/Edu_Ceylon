@@ -80,32 +80,50 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50 font-sans antialiased">
-      {/* Navbar */}
-      <nav className="flex justify-between items-center bg-gradient-to-r from-blue-500 to-green-500 text-white p-6 shadow-lg">
-        <h1 className="text-3xl font-extrabold tracking-wide">EduCeylon</h1>
-        <div className="flex items-center gap-6">
-          {email ? (
-            <>
-              <span className="text-lg font-medium">Hi, {name}!</span>
-              <button
-                onClick={handleLogout}
-                className="bg-white text-blue-600 px-6 py-3 rounded-full shadow-lg hover:bg-gray-200 transition duration-300"
-              >
-                Logout
-              </button>
-            </>
-          ) : (
-            <Link 
-              to="/Login" 
-              className="bg-white text-blue-600 px-6 py-3 rounded-full shadow-lg hover:bg-gray-200 transition duration-300"
-            >
-              Login
-            </Link>
-          )}
-        </div>
-      </nav>
-
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 font-sans antialiased">
+ {/* Navbar */}
+<nav className="bg-gradient-to-r from-blue-600 to-green-600 text-white shadow-xl">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex justify-between items-center h-20">
+      {/* Empty div to push content to center and right */}
+      <div className="flex-1"></div>
+      
+      {/* Welcome message - centered */}
+      <div className="flex-1 flex justify-center">
+        {email && (
+          <span className="text-lg font-medium text-white/90 hover:text-white transition">
+            Welcome back, <span className="font-bold">{name}</span>!
+          </span>
+        )}
+      </div>
+      
+      {/* Logout/Login button - right aligned */}
+      <div className="flex-1 flex justify-end">
+        {email ? (
+          <button
+            onClick={handleLogout}
+            className="px-6 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 shadow-sm hover:bg-white/20 hover:shadow-md transition-all duration-200 flex items-center space-x-2"
+          >
+            <span>Logout</span>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clipRule="evenodd" />
+            </svg>
+          </button>
+        ) : (
+          <Link 
+            to="/Login" 
+            className="px-6 py-2.5 rounded-full bg-white text-blue-600 font-medium shadow-lg hover:shadow-xl hover:bg-gray-50 transition-all duration-200 transform hover:-translate-y-0.5 flex items-center space-x-2"
+          >
+            <span>Login</span>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+            </svg>
+          </Link>
+        )}
+      </div>
+    </div>
+  </div>
+</nav>
       {/* Hero Section */}
       <section
         className="relative bg-cover bg-center h-screen flex items-center justify-center overflow-hidden"
@@ -358,7 +376,7 @@ export default function Home() {
                 className="bg-white rounded-2xl shadow-xl p-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl transform hover:shadow-lg"
                 whileHover={{ y: -5 }}
               >
-                {post.imageUrls.length > 0 && (
+                {post.imageUrls && post.imageUrls.length > 0 && (
                   <img
                     src={post.imageUrls[0]}
                     alt="Post"
@@ -366,12 +384,12 @@ export default function Home() {
                   />
                 )}
                 <h4 className="text-xl font-semibold text-gray-900 mb-1">
-                  {post.email.split('@')[0]}'s Post
+                  {post.email?.split('@')[0]}'s Post
                 </h4>
                 <p className="text-sm text-gray-700 mb-4">{post.description}</p>
 
                 <div className="flex items-center justify-between text-sm text-gray-500 border-t pt-3">
-                  <span>❤️ {post.likes} Likes • 💬 {post.comments.length} Comments</span>
+                  <span>❤️ {post.likes || 0} Likes • 💬 {(post.comments || []).length} Comments</span>
                 </div>
 
                 <div className="flex gap-4 mt-4 justify-center">
