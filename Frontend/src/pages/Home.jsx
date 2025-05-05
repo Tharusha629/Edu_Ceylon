@@ -423,7 +423,7 @@ export default function Home() {
                   />
                 )}
                 <p className="text-sm text-gray-500 mb-1">
-                  👨‍🍳 <span className="italic">{recipe.email?.split('@')[0]}'s Recipe</span>
+                📚 <span className="italic">{recipe.email?.split('@')[0]}'s Lesson</span>
                 </p>
                 <h4 className="text-lg font-semibold text-green-500 mb-3">{recipe.title}</h4>
                 <h5 className="text-md font-medium text-gray-700 mb-2">Ingredients:</h5>
