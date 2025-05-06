@@ -229,7 +229,7 @@ export default function UserProfile() {
               </div>
 
               <p className="text-gray-600 mt-4 max-w-lg text-center md:text-left leading-relaxed">
-                Passionate chef creating culinary magic ✨ | Food photographer 📷 | Sharing my kitchen adventures and secret recipes with the world 🌍 #HomeChef #Foodie
+              🎓 Passionate educator inspiring minds ✨ | Content creator & knowledge sharer 📘 | Exploring new ideas and spreading the joy of learning 🌍 #LifelongLearner #EduCreator
               </p>
 
               {/* Stats with Hover Effects */}
