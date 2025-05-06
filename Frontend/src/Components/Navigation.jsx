@@ -71,6 +71,13 @@ export default function Navigation() {
                 Learning Plans
                 <span className="absolute left-0 bottom-0 h-0.5 w-0 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
               </Link>
+              <Link
+                to="/Progress"
+                className="text-gray-700 hover:text-orange-400 px-1 py-2 text-sm font-medium relative group transition-colors duration-300"
+              >
+                Progress
+                <span className="absolute left-0 bottom-0 h-0.5 w-0 bg-orange-400 transition-all duration-300 group-hover:w-full"></span>
+              </Link>
 
               <Link
                 to="/About_us"
@@ -165,6 +172,13 @@ export default function Navigation() {
               onClick={() => setIsMenuOpen(false)}
             >
               Learning Plans
+            </Link>
+            <Link
+              to="/"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Progress
             </Link>
             <Link
               to="/About_us"
