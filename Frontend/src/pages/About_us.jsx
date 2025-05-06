@@ -130,13 +130,13 @@ export default function AboutUs() {
             },
             { 
               name: "Yalindi", 
-              role: "Content Creator", 
+              role: "Progress Manager", 
               image: "https://randomuser.me/api/portraits/women/65.jpg",
               bio: "Develops arts and humanities curriculum for all age groups."
             },
             { 
               name: "Poorni", 
-              role: "Content Creator", 
+              role: "System Administrator", 
               image: "https://randomuser.me/api/portraits/women/44.jpg",
               bio: "Creates vocational training and professional development content."
             }
