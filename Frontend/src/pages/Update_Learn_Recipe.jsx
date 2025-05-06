@@ -171,7 +171,7 @@ export default function Update_Learn_Recipe() {
 
           <div className="mb-8">
             <div className="flex justify-between items-center mb-3">
-              <label className="block text-lg font-medium text-blue-600">Step-by-Step Content</label>
+              <label className="block text-lg font-medium text-blue-600">Step-by-Step Learning</label>
               <button
                 type="button"
                 onClick={() => addArrayItem('methodSteps')}
