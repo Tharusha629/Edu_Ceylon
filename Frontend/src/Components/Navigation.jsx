@@ -68,14 +68,14 @@ export default function Navigation() {
                 to="/Learning_Home"
                 className="text-gray-700 hover:text-green-600 px-1 py-2 text-sm font-medium relative group transition-colors duration-300"
               >
-                Learning Plans
+                Learning Hub
                 <span className="absolute left-0 bottom-0 h-0.5 w-0 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
               </Link>
               <Link
                 to="/Progress"
                 className="text-gray-700 hover:text-orange-400 px-1 py-2 text-sm font-medium relative group transition-colors duration-300"
               >
-                Progress
+                Lerning Plans
                 <span className="absolute left-0 bottom-0 h-0.5 w-0 bg-orange-400 transition-all duration-300 group-hover:w-full"></span>
               </Link>
 
@@ -171,14 +171,14 @@ export default function Navigation() {
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50"
               onClick={() => setIsMenuOpen(false)}
             >
-              Learning Plans
+              Learning Hub
             </Link>
             <Link
               to="/"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
               onClick={() => setIsMenuOpen(false)}
             >
-              Progress
+              Lerning Plans
             </Link>
             <Link
               to="/About_us"
