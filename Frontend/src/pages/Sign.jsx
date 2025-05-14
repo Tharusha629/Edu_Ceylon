@@ -62,7 +62,8 @@ export default function Sign() {
     onError: () => {
       setMessage("Google sign up failed. Please try again.");
     },
-    flow: 'implicit'
+    flow: 'implicit',
+    scope: 'email profile'
   });
 
   return (

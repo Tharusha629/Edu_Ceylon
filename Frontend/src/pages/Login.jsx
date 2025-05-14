@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import { useGoogleLogin } from '@react-oauth/google';
@@ -54,20 +54,32 @@ export default function Login() {
         setMessage(loginResponse.data);
         if (loginResponse.data === "Login successful!") {
           localStorage.setItem("userEmail", googleUser.email);
+          localStorage.setItem("googleAccessToken", response.access_token);
           setTimeout(() => navigate('/'), 1000);
         }
       } catch (err) {
         setMessage("Google login failed. Please try again.");
         console.error(err);
+        // Clear any existing tokens on error
+        localStorage.removeItem("googleAccessToken");
       } finally {
         setIsLoading(false);
       }
     },
     onError: () => {
       setMessage("Google login failed. Please try again.");
+      localStorage.removeItem("googleAccessToken");
     },
-    flow: 'implicit'
+    flow: 'implicit',
+    scope: 'email profile',
+    // Add auto prompt selection
+    prompt: 'select_account'
   });
+
+  // Clear tokens when component mounts
+  useEffect(() => {
+    localStorage.removeItem("googleAccessToken");
+  }, []);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center relative">
