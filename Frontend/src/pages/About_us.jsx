@@ -119,25 +119,25 @@ export default function AboutUs() {
             { 
               name: "Tharusha", 
               role: "Content Creator", 
-              image: "https://plus.unsplash.com/premium_photo-1689977927774-401b12d137d6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              image: "https://randomuser.me/api/portraits/men/32.jpg",
               bio: "Specializes in STEM education and interactive content development."
             },
             { 
               name: "Navindu", 
               role: "Content Creator", 
-              image: "https://plus.unsplash.com/premium_photo-1689977871600-e755257fb5f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              image: "https://randomuser.me/api/portraits/men/45.jpg",
               bio: "Focuses on language learning and cultural education programs."
             },
             { 
               name: "Yalindi", 
-              role: "Content Creator", 
-              image: "https://plus.unsplash.com/premium_photo-1689564003745-946f35267ffe?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              role: "Progress Manager", 
+              image: "https://randomuser.me/api/portraits/women/65.jpg",
               bio: "Develops arts and humanities curriculum for all age groups."
             },
             { 
               name: "Poorni", 
-              role: "Content Creator", 
-              image: "https://plus.unsplash.com/premium_photo-1690294614341-cf346ba0a637?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              role: "System Administrator", 
+              image: "https://randomuser.me/api/portraits/women/44.jpg",
               bio: "Creates vocational training and professional development content."
             }
           ].map((member, index) => (

@@ -110,8 +110,8 @@ export default function UserProfile() {
         <div className="text-center">
           <div className="w-20 h-20 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-6"></div>
           <div className="space-y-2">
-            <h2 className="text-2xl font-bold text-gray-800 animate-pulse">Loading Culinary Journey</h2>
-            <p className="text-gray-600">Preparing your delicious profile...</p>
+            <h2 className="text-2xl font-bold text-gray-800 animate-pulse">Loading </h2>
+            <p className="text-gray-600">Preparing your learning profile...</p>
           </div>
         </div>
       </div>
@@ -229,7 +229,7 @@ export default function UserProfile() {
               </div>
 
               <p className="text-gray-600 mt-4 max-w-lg text-center md:text-left leading-relaxed">
-              🎓 Passionate educator inspiring minds ✨ | Content creator & knowledge sharer 📘 | Exploring new ideas and spreading the joy of learning 🌍 #LifelongLearner #EduCreator
+                Passionate educator specializing in Computer Science 💻 | Educational content creator 📚 | Helping students excel in programming and technology 🎯 | #EdTech #STEM #Teaching
               </p>
 
               {/* Stats with Hover Effects */}
@@ -417,9 +417,9 @@ export default function UserProfile() {
                   <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
                 </svg>
               </div>
-              <h4 className="text-2xl font-bold text-gray-800 mb-3">Your Culinary Gallery Awaits</h4>
+              <h4 className="text-2xl font-bold text-gray-800 mb-3">Your Learning Journey Begins Here</h4>
               <p className="text-gray-600 max-w-md mx-auto mb-6 leading-relaxed">
-                Share your first masterpiece and inspire others with your unique culinary creations. Every great chef started somewhere!
+                Start sharing your educational content and help others learn. Whether it's tutorials, lessons, or study materials - your knowledge can make a difference!
               </p>
               <button
                 onClick={() => navigate("/Post_add")}

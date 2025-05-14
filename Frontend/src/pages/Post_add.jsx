@@ -100,7 +100,7 @@ export default function Post_add() {
       >
         <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-8 px-6 text-center">
           <h2 className="text-3xl font-bold tracking-tight">Share Your Creativity</h2>
-          <p className="text-sm mt-2 opacity-90">Let the world see your recycled wonders 🌍</p>
+          <p className="text-sm mt-2 opacity-90">Let the world see your life 🌍</p>
         </div>
 
         <div className="px-6 py-8">

@@ -1,5 +1,5 @@
+Backend\config\WebConfig.class
 Backend\BackendApplication.class
 Backend\repository\LearRepository.class
-Backend\model\LearModel.class
-Backend\config\WebConfig.class
 Backend\controller\LearController.class
+Backend\model\LearModel.class
